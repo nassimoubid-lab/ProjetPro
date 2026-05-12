@@ -6,8 +6,9 @@ use App\Http\Controllers\AdminController;
 
 
 
+
 Route::get('/', function () {
-    return redirect('/reservation');
+    return view('/welcome');
 });
 
 Route::get('/reservation', [ReservationController::class, 'create'])->name('reservation.create');
