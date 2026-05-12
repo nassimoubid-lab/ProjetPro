@@ -594,6 +594,13 @@
     </div>
 
     <div class="form-card">
+        @if(session('success'))
+        <div style="background:#d4edda; color:#155724; padding:16px; margin-bottom:20px; border-radius:4px;">
+            {{ session('success') }} — {{ session('reservation_nom') }},
+            le {{ session('reservation_date') }} à {{ session('reservation_heure') }}
+            pour {{ session('reservation_nb') }} personne(s).
+        </div>
+    @endif
         <form action="{{ route('reservation.store') }}" method="POST">
             @csrf
             <div class="form-row">
@@ -637,7 +644,7 @@
             </div>
             <div class="form-group">
                 <label>Nombre de couverts</label>
-                <select name="couverts" required>
+                <select name="nb_personnes" required>
                     <option value="">Sélectionner</option>
                     @for($i = 1; $i <= 8; $i++)
                         <option value="{{ $i }}">{{ $i }} {{ $i === 1 ? 'personne' : 'personnes' }}</option>

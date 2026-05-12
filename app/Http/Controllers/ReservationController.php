@@ -69,4 +69,9 @@ public function export()
 }
 
 
+    public function home()
+{
+    return view('welcome');
+}
+
 }

@@ -7,9 +7,7 @@ use App\Http\Controllers\AdminController;
 
 
 
-Route::get('/', function () {
-    return view('/welcome');
-});
+Route::get('/', [ReservationController::class, 'home'])->name('home');
 
 Route::get('/reservation', [ReservationController::class, 'create'])->name('reservation.create');
 Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation.store');
