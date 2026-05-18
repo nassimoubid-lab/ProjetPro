@@ -131,16 +131,18 @@
         /* ── MAIN ── */
         .main {
             margin-left: 240px;
-            padding: 48px;
+            padding: 48px 60px;
             min-height: 100vh;
+            max-width: calc(100vw - 240px);
         }
 
         /* ── HEADER ── */
         .page-header {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: space-between;
             margin-bottom: 40px;
+            gap: 20px;
         }
 
         .page-tag {
@@ -190,9 +192,10 @@
         /* ── STATS ── */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
             margin-bottom: 40px;
+            width: 100%;
         }
 
         .stat-card {
@@ -254,6 +257,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 16px;
+            flex-wrap: nowrap;
         }
 
         .table-title {
@@ -261,6 +266,7 @@
             font-weight: 500;
             color: var(--brown-dark);
             letter-spacing: 0.05em;
+            white-space: nowrap;
         }
 
         .table-count {
@@ -269,6 +275,7 @@
             background: var(--cream);
             padding: 4px 12px;
             border-radius: 99px;
+            white-space: nowrap;
         }
 
         table {
